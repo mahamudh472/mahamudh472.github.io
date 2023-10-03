@@ -1,8 +1,83 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 *{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 16px;
 }
 .nav-item .nav-link{
     margin: 0 10px;
+}
+
+#home{
+    background: #0d6efd;
+    background-size: cover;
+    height: 545px;
+    padding-top: 30px;
+}
+
+.hero-text{
+    position: relative;
+    font-size: 60px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+.text{
+    display: inline-block;
+    font-size: 1em;
+    margin: 0;
+    line-height: 1;
+}
+.typed-cursor {
+    font-weight: bold; /* Adjust the font weight to make the cursor bold */
+    font-size: 1em; /* Adjust the initial font size of the cursor */
+    animation: blink-caret 2s step-start infinite; /* Make the animation infinite for continuous blinking */
+}
+
+@keyframes blink-caret {
+    0% {
+        opacity: 0; /* Cursor is not visible at the start of the animation */
+    }
+    25% {
+        opacity: 1; /* Cursor is fully visible */
+        transform: scale(0.5); /* Smaller size at the midpoint of the animation */
+    }
+    50% {
+        opacity: 0; /* Cursor is not visible */
+    }
+    75% {
+        opacity: 1; /* Cursor is fully visible again */
+        transform: scale(0.5); /* Smaller size at the midpoint of the animation */
+    }
+    100% {
+        opacity: 0; /* Cursor is not visible at the end of the animation */
+    }
+}
+.btn-contact{
+    background-color: #089208;
+    padding: 15px 40px;
+    border: none;
+    margin-right: 10px;
+    color: #fff;
+    
+}
+.btn-cv{
+    background-color: #bd0000;
+    padding: 15px 40px;
+    border: none;
+    color: #fff;
+}
+#about{
+    padding-top: 100px;
+    
+}
+#packages{
+    padding: 100px 0;
+    margin-top: 100px;
+}
+.w-item{
+    font-size: 60px;
+    color: #0d6efd;
+}
+.bold{
+    font-weight: bold;
 }
