@@ -27,6 +27,28 @@
     margin: 0;
     line-height: 1;
 }
+@media (max-width: 992px){
+    .hero-text{
+        font-size: 40px;
+    }
+    .btn-group{
+        flex-direction: column;
+    }
+    .btn-contact{
+        margin-right: 0px !important;
+    }
+    
+}
+/* for too loo display */
+@media (max-width: 400px){
+    .hero-text{
+        font-size: 20px;
+    }
+    .btn-contact, .btn-cv{
+        padding: 5px 10px !important;
+    }
+}
+
 .typed-cursor {
     font-weight: bold; /* Adjust the font weight to make the cursor bold */
     font-size: 1em; /* Adjust the initial font size of the cursor */
