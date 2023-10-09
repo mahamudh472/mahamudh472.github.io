@@ -9,6 +9,9 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="custom.css">
 </head>
 
@@ -24,13 +27,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
                     <li class="nav-item me-2">
-                        <a class="nav-link active" aria-current="page" href="#home" data-bs-target="#home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#" data-bs-target="#home">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about" data-bs-target="#about">About</a>
                     </li>
                     <li class="nav-item" href="">
-                        <a class="nav-link" href="">Projects</a>
+                        <a class="nav-link" href="#projects" data-bs-target="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>
@@ -78,8 +81,11 @@
 
     <div class="container-fluid" id="about">
         <div class="container mt-5 ">
-            <h2 class="text-center">About Me</h2>
-            <h1 class="border-bottom text-center bold">Know me More</h1>
+            <div class="row justify-content-center align-items-center ">
+                <div class="text-center col-2 fs-5 bold bg-primary text-white my-2">About Me</div>
+            </div>
+
+            <h1 class="text-center bold my-2">Know me More</h1>
             <div class="row mt-5">
                 <div class="col-12 col-lg-7">
                     <h3>Hi, I am <span class="h2 border-bottom border-primary border-3">Mahmud Hasan</span></h3>
@@ -112,7 +118,9 @@
     </div>
     <div class="container-fluid bg-body-secondary" id="packages">
         <div class="container ">
-            <h2 class="text-center">What I Do</h2>
+            <div class="row justify-content-center align-items-center ">
+                <div class="text-center col-2 fs-5 bold bg-primary text-white my-4">What I Do</div>
+            </div>
             <h1 class="text-center mb-5 bold">How I can help your next project</h1>
             <div class="row">
                 <div class="col-12 col-lg-4 d-flex flex-column text-center p-4">
@@ -156,67 +164,263 @@
     </div>
     <div class="container-fluid bg-body-secondary" id="projects">
         <div class="container">
-            <div class="container">
-                <h2 class="text-center">What I Do</h2>
-                <h1 class="text-center mb-5 bold">How I can help your next project</h1>
-                <div class="row justify-content-center align-items-center my-4">
-                    <div class="btn-group col-8 align-self-center" role="group" aria-label="Basic outlined example">
-                        <button type="button" class="btn btn-outline-primary" data-filter="*">Show All</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter=".web">Frontend</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter=".mobile">Backend</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter=".mobile">Python</button>
-                      </div>
-
-                </div>
-                <div class="row "  id="gallery" style="transition: height 0.3s ease-in-out;">
-                    <div class="col-md-4 item web my-2">
-                        <div class="project-image ">
-                            <img src="eduhub-dashboard.PNG" alt="Project 1">
-                            <div class="project-overlay">
-                                <div class="project-text">
-                                    Project 1 Description
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 item web my-2">
-                        <div class="project-image">
-                            <img src="eduhub-dashboard.PNG" alt="Project 2">
-                            <div class="project-overlay">
-                                <div class="project-text">
-                                    Project 2 Description
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 item mobile my-2">
-                        <div class="project-image">
-                            <img src="eduhub-dashboard.PNG" alt="Project 3">
-                            <div class="project-overlay">
-                                <div class="project-text">
-                                    Project 3 Description
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 item mobile my-2">
-                        <div class="project-image">
-                            <img src="eduhub-dashboard.PNG" alt="Project 3">
-                            <div class="project-overlay">
-                                <div class="project-text">
-                                    Project 3 Description
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more columns with project images and descriptions -->
+            <div class="row justify-content-center align-items-center ">
+                <div class="text-center col-2 fs-5 bold bg-primary text-white my-4">My Projects</div>
+            </div>
+            <h1 class="text-center mb-5 bold">How I can help your next project</h1>
+            <div class="row justify-content-center align-items-center my-4">
+                <div class="btn-group col-8 align-self-center" role="group" aria-label="Basic outlined example">
+                    <button type="button" class="btn btn-outline-primary active" data-filter="*">Show All</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter=".web">Frontend</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter=".backend">Backend</button>
+                    <button type="button" class="btn btn-outline-primary" data-filter=".python">Python</button>
                 </div>
 
             </div>
+            <div class="row " id="gallery" style="transition: height 0.3s ease-in-out;">
+                <div class="col-md-4 item web my-2">
+                    <div class="project-image ">
+                        <img src="eduhub-dashboard.PNG" alt="Project 1">
+                        <div class="project-overlay">
+                            <div class="project-text">
+                                Project 1 Description
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 item web my-2">
+                    <div class="project-image">
+                        <img src="eduhub-dashboard.PNG" alt="Project 2">
+                        <div class="project-overlay">
+                            <div class="project-text">
+                                Project 2 Description
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 item python my-2">
+                    <div class="project-image">
+                        <img src="eduhub-dashboard.PNG" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="project-text">
+                                Project 3 Description
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 item python my-2">
+                    <div class="project-image">
+                        <img src="eduhub-dashboard.PNG" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="project-text">
+                                Project 3 Description
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more columns with project images and descriptions -->
+            </div>
+
+
 
         </div>
     </div>
-    <div style="height: 1000px;"></div>
+
+    <div class="container-fluid" id="faq">
+        <div class="container">
+            <div class="row justify-content-center align-items-center ">
+                <div class="text-center col-2 fs-5 bold bg-primary text-white my-4">FAQ</div>
+            </div>
+            <h1 class="text-center mb-5 bold">Have any questions?</h1>
+            <div class="row">
+                <div class="col-8">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What is your experience and expertise?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Can you provide references or case studies of past projects?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    What is your approach to website development and project management?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    What technologies and programming languages do you specialize in?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    What is your pricing structure and payment terms?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classeSevens that we use to style
+                                    each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    Can you customize the website according to our specific needs and preferences?
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    How do you handle testing and quality assurance?
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src="lightbulb-vector-icon-removebg-preview.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-primary-subtle pb-4" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="bold">Get in Touch</h2>
+                    <p class="fs-5">I enjoy discussing new projects and design challenges. Please share as much info, as
+                        possible so we can get the most out of our first catch-up.</p>
+                    <h3 class="bold">Living In</h3>
+                    <p class="fs-5">Dinajpur, Bangladesh</p>
+                    <h3 class="bold">Call</h3>
+                    <p class="fs-5">+8801926615570</p>
+                    <div class="social-media-handle mb-3">
+                        <i class="fa-brands custom-socials-meida fa-facebook"></i>
+                        <i class="fa-brands custom-socials-meida fa-instagram"></i>
+                        <i class="fa-brands custom-socials-meida fa-twitter"></i>
+                        <i class="fa-brands custom-socials-meida fa-github"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="bold">Contact Me</h2>
+                    <div class="mb-3 fs-5">
+                        <label for="exampleFormControlInput1" class="form-label">Your Name</label>
+                        <input type="text" class="contact-form" id="exampleFormControlInput1"
+                            placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3 fs-5">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="contact-form" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3 fs-5">
+                        <label for="exampleFormControlTextarea1" class="form-label">Message for me</label>
+                        <textarea class="contact-form" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <a href="" class="btn btn-dark my-3">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-black py-5 text-white">
+        <div class="container text-center">
+            <h3>Designed by Mahmud Hasan</h3>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -251,11 +455,11 @@
                 $(this).addClass('active'); // Add 'active' class to the clicked button
             });
 
-                $('.btn').on('click', function () {
-                    var filterValue = $(this).attr('data-filter');
-                    $gallery.isotope({ filter: filterValue });
-                });
+            $('.btn').on('click', function () {
+                var filterValue = $(this).attr('data-filter');
+                $gallery.isotope({ filter: filterValue });
             });
+        });
     </script>
 
 </body>
