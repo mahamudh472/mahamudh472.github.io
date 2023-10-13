@@ -92,11 +92,10 @@
     padding-top: 100px;
     
 }
-#packages, #projects, #contact{
+#packages, #projects, #contact, tr{
     padding: 100px 0;
-    margin-top: 100px;
 }
-#faq{
+#faq, #resume{
     padding: 100px 0;
 }
 .w-item{
@@ -158,4 +157,69 @@
     background-color: transparent;
     outline: none;
     width: 100%;
+}
+
+.section-name{
+    width: fit-content !important;
+}
+
+
+/* ----------------------------------------------------------------- */
+/* -----------------------Resume------------------------------------ */
+/* ------------------------------------------------------------------ */
+.resume-container {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.resume-header-text{
+    font-size: 24px;
+    color: #17196a;
+    font-weight: bold;
+    border-bottom: 4px solid #000;
+    width: 100%;
+}
+.tags-group{
+    width: 100%;
+    padding: 10px;
+}
+.tags{
+    border: 1px solid silver;
+    width: fit-content;
+    padding: 3px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 3px 4px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.project-details{
+    margin-top: 5px;
+}
+.sub-header{
+    font-size: 18px;
+    width: 60%;
+    margin-top: 15px;
+}
+.resume-date{
+    opacity: .6;
+}
+ul{
+    margin-top: 7px;
+}
+ul li{
+    margin-left: 15px;
+    font-size: 18px;
+}
+.mini-gap{
+    height: 15px;
+}
+.blue-text{
+    color: #17196a;
+    font-weight: bold;
+    padding: 2px;
+}
+.pink-text{
+    color: #ca75ab;
+    display: inline-block;
+    font-weight: bold;
 }
