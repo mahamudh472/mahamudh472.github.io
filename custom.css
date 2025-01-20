@@ -9,7 +9,7 @@
 }
 
 #home{
-    background: #0d6efd;
+    background: linear-gradient(#0f2027, #2c5364);
     background-size: cover;
     min-height: 545px;
     padding-top: 30px;
@@ -75,7 +75,7 @@
     }
 }
 .btn-contact{
-    background-color: #089208;
+    background-color: #00b894;
     padding: 15px 40px;
     border: none;
     margin-right: 10px;
@@ -83,10 +83,18 @@
     
 }
 .btn-cv{
-    background-color: #bd0000;
+    background-color: #e17055;
     padding: 15px 40px;
     border: none;
     color: #fff;
+}
+.btn-contact:hover{
+    background-color: #009b7c;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+.btn-cv:hover{
+    background-color: #dd5a39;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 #about{
     padding-top: 100px;
@@ -100,7 +108,7 @@
 }
 .w-item{
     font-size: 60px;
-    color: #0d6efd;
+    color: #3498db;
 }
 .bold{
     font-weight: bold;
