@@ -1,0 +1,9 @@
+{
+    "projects": [
+        {
+            "Project_name": "Eduhub",
+            "img": "img/eduhub-dashboard.PNG",
+            "desc": "Eduhub is a web application for managing educational institutions."
+        }
+    ]
+}
