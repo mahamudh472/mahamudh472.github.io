@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mahmud Hasan</title>
-    <link rel="icon" href="letter-m.png">
+    <link rel="icon" href="img/letter-m.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.min.css"> -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,7 +35,8 @@
                         <a class="nav-link" href="#about" data-bs-target="#about">About</a>
                     </li>
                     <li class="nav-item me-2">
-                        <a class="nav-link active" aria-current="page" href="#resume" data-bs-target="#resume">Resume</a>
+                        <a class="nav-link active" aria-current="page" href="#resume"
+                            data-bs-target="#resume">Resume</a>
                     </li>
                     <li class="nav-item" href="">
                         <a class="nav-link" href="#projects" data-bs-target="#projects">Projects</a>
@@ -169,14 +171,14 @@
                 <div class="text-center section-name fs-5 bold bg-primary text-white my-4">Resume</div>
             </div>
             <h1 class="text-center mb-5 bold">A Summary of my Resume</h1>
-            
+
 
             <div style="width: 100%; height: auto; overflow: hidden; display: flex; justify-content: center;">
                 <img src="img/resume-Mahmud-Hasan.jpg" class="img-fluid m-auto" alt="">
             </div>
-            
-            
-            
+
+
+
 
             <button class="btn-cv m-auto d-block my-3" onclick="window.location.href='Mahmud-Hasan-resume.pdf'">Download
                 CV</button>
@@ -199,68 +201,6 @@
 
             </div>
             <div class="row " id="gallery" style="transition: height 0.3s ease-in-out;">
-                <div class="col-md-4 item backend python my-2">
-                    <div class="project-image ">
-                        <img src="img/eduhub-dashboard.PNG" alt="Project 1">
-                        <div class="project-overlay">
-                            <div class="project-text">
-                                Eduhub is a web application for managing educational institutions.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 item web my-2">
-                    <div class="project-image">
-                        <img src="img/infitetechquery.PNG" alt="Project 2">
-                        <div class="project-overlay">
-                            <div class="project-text">
-                                Infinte Tech Query is a website where you can find all the tech related news and
-                                updates.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 item web my-2">
-                    <div class="project-image">
-                        <img src="img/priority-matrix.PNG" alt="Project 3">
-                        <div class="project-overlay">
-                            <div class="project-text">
-                                Priority Matrix is a time management tool that helps you prioritize tasks and focus on
-                                the projects that matter most.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 item python backend my-2">
-                    <div class="project-image">
-                        <img src="img/rate-my-rommie.PNG" alt="Project 4">
-                        <div class="project-overlay">
-                            <div class="project-text">
-                                Rommate Rating Website
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 item web my-2">
-                    <div class="project-image">
-                        <img src="img/bbhs.PNG" alt="Project 4">
-                        <div class="project-overlay">
-                            <div class="project-text">
-                                This is a school website template.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 item python my-2">
-                    <div class="project-image">
-                        <img src="img/permutation-and-combination.PNG" alt="Project 4">
-                        <div class="project-overlay">
-                            <div class="project-text">
-                                Permutaion and combination calculator
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- Add more columns with project images and descriptions -->
             </div>
 
@@ -466,29 +406,49 @@
     </script>
     <script>
         $(document).ready(function () {
-            fetch('data/projects.json')
-            .then((response) => response.json())
-            .then((data => {
-                for (const item of data.projects){
-                    console.log(item)
+    fetch('data/projects.json')
+        .then((response) => response.json())
+        .then((data) => {
+            let gallery = document.querySelector("#gallery");
+            for (const item of data.projects) {
+                let div = document.createElement('div');
+                div.classList.add('col-md-4', 'item', 'my-2');
+                for (let cat of item.category) {
+                    div.classList.add(cat);
                 }
-            }))
+                div.innerHTML = `
+                    <div class="project-image">
+                        <img src="${item.img}" alt="${item.Project_name}">
+                        <div class="project-overlay">
+                            <div class="project-text">
+                                ${item.description}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                gallery.appendChild(div);
+            }
+
+            // Initialize Isotope after the content is loaded
             var $gallery = $('#gallery').isotope({
                 itemSelector: '.item',
-                layoutMode: 'fitRows'
+                layoutMode: 'fitRows',
             });
+
+            // Force Isotope to recalculate the layout
+            $gallery.isotope('reloadItems'); // Reload the items
+            $gallery.isotope('layout'); // Recalculate the layout
 
             // Filter buttons event handler
             $('.btn').on('click', function () {
                 $('.btn').removeClass('active'); // Remove 'active' class from all buttons
                 $(this).addClass('active'); // Add 'active' class to the clicked button
-            });
 
-            $('.btn').on('click', function () {
                 var filterValue = $(this).attr('data-filter');
                 $gallery.isotope({ filter: filterValue });
             });
         });
+});
     </script>
 
 </body>

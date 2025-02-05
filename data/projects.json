@@ -1,9 +1,40 @@
 {
     "projects": [
         {
-            "Project_name": "Eduhub",
+            "Project_name": "EduHub",
             "img": "img/eduhub-dashboard.PNG",
-            "desc": "Eduhub is a web application for managing educational institutions."
+            "desc": "Eduhub is a web application for managing educational institutions.",
+            "category": ["python", "web", "backend"]
+        },
+        {
+            "Project_name": "Infinte Tech Query",
+            "img": "img/infitetechquery.PNG",
+            "desc": "Infinte Tech Query is a website where you can find all the tech related news and updates.",
+            "category": ["web"]
+        },
+        {
+            "Project_name": "Priority Matrix",
+            "img": "img/priority-matrix.PNG",
+            "desc": "Priority Matrix is a time management tool that helps you prioritize tasks and focus on the projects that matter most.",
+            "category": ["web"]
+        },
+        {
+            "Project_name": "MyRommie",
+            "img": "img/rate-my-rommie.PNG",
+            "desc": "Rommate Rating Website",
+            "category": ["web", "python", "backend"]
+        },
+        {
+            "Project_name": "img/bbhs.PNG",
+            "img": "img/priority-matrix.PNG",
+            "desc": "This is a school website template.",
+            "category": ["web"]
+        },
+        {
+            "Project_name": "Permutaion and combination calculator",
+            "img": "img/permutation-and-combination.PNG",
+            "desc": "Permutaion and combination calculator",
+            "category": ["python"]
         }
     ]
 }
