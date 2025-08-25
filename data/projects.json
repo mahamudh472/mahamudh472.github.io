@@ -1,40 +1,87 @@
 {
     "projects": [
         {
-            "Project_name": "EduHub",
-            "img": "img/eduhub-dashboard.PNG",
-            "desc": "Eduhub is a web application for managing educational institutions.",
-            "category": ["python", "web", "backend"]
+            "Project_name": "GlucoGuide",
+            "images": [
+                "img/diabetes-predictor/Home_unauthenticated.PNG",
+                "img/diabetes-predictor/Home.png",
+                "img/diabetes-predictor/Calender.PNG",
+                "img/diabetes-predictor/dietary-suggestion.png",
+                "img/diabetes-predictor/prediction.png",
+                "img/diabetes-predictor/profile.png",
+                "img/diabetes-predictor/documents.png"
+            ],
+            "description": "GlucoGuide – Diabetes Prediction and Health Monitoring System\n\nKey Features:\nSecure Authentication with 2FA: User registration and login are protected with two-factor authentication via Gmail OTP for enhanced security.\n\nPersonalized Health Profile: Users input key physical and medical metrics during onboarding (e.g., age, glucose level, blood pressure, BMI), which can be updated anytime from the profile page.\n\nInteractive Daily Tracker: A dynamic calendar interface allows users to submit daily health data. Dates with entries are marked in blue, and selected dates are highlighted in yellow, displaying stored values for easy review and updates.\n\nDiabetes Prediction Engine: Upon daily data submission, a trained machine learning model (built with scikit-learn) predicts diabetes risk and returns a result with percentage likelihood.\n\nDietary Suggestions: Based on health metrics and prediction results, the system provides smart, personalized dietary recommendations to guide users toward healthier choices.\n\nVisual Dashboard: Users can track trends in their health data over time through interactive charts and analytics.\n\nDocument Management: A document center allows users to securely upload, view, download, share, and delete medical documents or reports.",
+            "category": ["python", "django", "web", "backend"],
+            "technologies": ["Python", "Django", "Pandas", "Scikit-learn", "HTML/CSS", "JavaScript", "SQLite", "Bootstrap"],
+            "liveUrl": "#",
+            "githubUrl": "#"
         },
         {
-            "Project_name": "Infinte Tech Query",
-            "img": "img/infitetechquery.PNG",
-            "desc": "Infinte Tech Query is a website where you can find all the tech related news and updates.",
-            "category": ["web"]
+            "Project_name": "EduHub",
+            "images": [
+                "img/eduhub-dashboard.PNG"
+            ],
+            "description": "EduHub is a comprehensive web application designed for managing educational institutions. It provides a complete solution for student management, course administration, grade tracking, and administrative tasks. The platform features an intuitive dashboard for administrators, teachers, and students with real-time analytics and reporting capabilities.",
+            "category": ["python", "django", "web", "backend"],
+            "technologies": ["Python", "Django", "HTML/CSS", "JavaScript", "SQLite", "Bootstrap", "Chart.js"],
+            "liveUrl": "#",
+            "githubUrl": "#"
+        },
+        {
+            "Project_name": "Infinite Tech Query",
+            "images": [
+                "img/infitetechquery.PNG"
+            ],
+            "description": "Infinite Tech Query is a modern tech news and updates website where users can find the latest technology trends, news articles, and industry insights. The platform features a clean, responsive design with categorized content, advanced search functionality, and user engagement features like comments and social sharing.",
+            "category": ["web", "frontend"],
+            "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Responsive Design", "SEO Optimization"],
+            "liveUrl": "#",
+            "githubUrl": "#"
         },
         {
             "Project_name": "Priority Matrix",
-            "img": "img/priority-matrix.PNG",
-            "desc": "Priority Matrix is a time management tool that helps you prioritize tasks and focus on the projects that matter most.",
-            "category": ["web"]
+            "images": [
+                "img/priority-matrix.PNG"
+            ],
+            "description": "Priority Matrix is an advanced time management and productivity tool that helps users prioritize tasks using the Eisenhower Matrix methodology. Users can categorize tasks based on urgency and importance, set deadlines, track progress, and generate productivity reports. The application includes drag-and-drop functionality and visual analytics.",
+            "category": ["web", "productivity"],
+            "technologies": ["HTML", "CSS", "JavaScript", "Local Storage", "Chart.js", "Drag & Drop API"],
+            "liveUrl": "#",
+            "githubUrl": "#"
         },
         {
-            "Project_name": "MyRommie",
-            "img": "img/rate-my-rommie.PNG",
-            "desc": "Rommate Rating Website",
-            "category": ["web", "python", "backend"]
+            "Project_name": "MyRoomie",
+            "images": [
+                "img/rate-my-rommie.PNG"
+            ],
+            "description": "MyRoomie is a comprehensive roommate rating and review platform that helps users find compatible living partners. The platform includes detailed user profiles, sophisticated rating systems, advanced search filters, secure messaging functionality, and verification features to ensure safe and reliable roommate connections.",
+            "category": ["web", "python", "backend", "fullstack"],
+            "technologies": ["Python", "Django", "PostgreSQL", "HTML/CSS", "JavaScript", "Bootstrap", "WebSockets"],
+            "liveUrl": "#",
+            "githubUrl": "#"
         },
         {
-            "Project_name": "img/bbhs.PNG",
-            "img": "img/priority-matrix.PNG",
-            "desc": "This is a school website template.",
-            "category": ["web"]
+            "Project_name": "BBHS School Website",
+            "images": [
+                "img/bbhs.PNG"
+            ],
+            "description": "A modern, responsive school website template designed for educational institutions. Features include comprehensive student portals, detailed faculty information, interactive event calendars, news sections, online admission systems, and parent-teacher communication tools with a professional and accessible design.",
+            "category": ["web", "template"],
+            "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "PHP", "MySQL", "Content Management"],
+            "liveUrl": "#",
+            "githubUrl": "#"
         },
         {
-            "Project_name": "Permutaion and combination calculator",
-            "img": "img/permutation-and-combination.PNG",
-            "desc": "Permutaion and combination calculator",
-            "category": ["python"]
+            "Project_name": "Permutation & Combination Calculator",
+            "images": [
+                "img/permutation-and-combination.PNG"
+            ],
+            "description": "An advanced mathematical calculator specifically designed for permutation and combination problems. Features comprehensive step-by-step solutions, interactive visual representations, detailed educational explanations, and practice problems to help students understand complex mathematical concepts with ease.",
+            "category": ["python", "mathematics", "education"],
+            "technologies": ["Python", "Tkinter", "NumPy", "Mathematical Libraries", "GUI Design"],
+            "liveUrl": "#",
+            "githubUrl": "#"
         }
     ]
 }

@@ -1,0 +1,26 @@
+
+GlucoGuide – Diabetes Prediction and Health Monitoring System
+
+Key Features:
+Secure Authentication with 2FA: User registration and login are protected with two-factor authentication via Gmail OTP for enhanced security.
+
+Personalized Health Profile: Users input key physical and medical metrics during onboarding (e.g., age, glucose level, blood pressure, BMI), which can be updated anytime from the profile page.
+
+Interactive Daily Tracker: A dynamic calendar interface allows users to submit daily health data. Dates with entries are marked in blue, and selected dates are highlighted in yellow, displaying stored values for easy review and updates.
+
+Diabetes Prediction Engine: Upon daily data submission, a trained machine learning model (built with scikit-learn) predicts diabetes risk and returns a result with percentage likelihood.
+
+Dietary Suggestions: Based on health metrics and prediction results, the system provides smart, personalized dietary recommendations to guide users toward healthier choices.
+
+Visual Dashboard: Users can track trends in their health data over time through interactive charts and analytics.
+
+Document Management: A document center allows users to securely upload, view, download, share, and delete medical documents or reports.
+
+🛠️ Tech Stack
+Frontend: Bootstrap, JavaScript
+
+Backend: Django (Python)
+
+Machine Learning: Pandas, Scikit-learn
+
+Database: SQLite3 (suitable for prototyping)

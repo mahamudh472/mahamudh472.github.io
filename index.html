@@ -185,27 +185,80 @@
 
         </div>
     </div>
-    <div class="container-fluid bg-body-tertiary " id="projects">
+    <div class="container-fluid" id="projects">
         <div class="container">
             <div class="row justify-content-center align-items-center ">
                 <div class="text-center section-name fs-5 bold bg-primary text-white my-4">My Projects</div>
             </div>
-            <h1 class="text-center mb-5 bold">How I can help your next project</h1>
-            <div class="row justify-content-center align-items-center my-4">
-                <div class="btn-group col-8 align-self-center" role="group" aria-label="Basic outlined example">
-                    <button type="button" class="btn btn-outline-primary active" data-filter="*">Show All</button>
-                    <button type="button" class="btn btn-outline-primary" data-filter=".web">Frontend</button>
-                    <button type="button" class="btn btn-outline-primary" data-filter=".backend">Backend</button>
-                    <button type="button" class="btn btn-outline-primary" data-filter=".python">Python</button>
+            <h1 class="text-center mb-5 bold text-white">How I can help your next project</h1>
+            <div class="project-carousel-container">
+                <button class="carousel-nav carousel-nav-left" id="carousel-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="project-carousel-wrapper">
+                    <div class="project-carousel" id="project-carousel">
+                        <!-- Project cards will be injected here -->
+                    </div>
                 </div>
-
+                <button class="carousel-nav carousel-nav-right" id="carousel-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
-            <div class="row " id="gallery" style="transition: height 0.3s ease-in-out;">
-                <!-- Add more columns with project images and descriptions -->
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="project-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Project Title</h2>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-
-
-
+            <div class="modal-content">
+                <div class="modal-image-section">
+                    <div class="image-gallery">
+                        <div class="main-image-container">
+                            <img id="modal-main-image" src="" alt="Project Image" class="main-image">
+                            <div class="image-nav">
+                                <button class="image-nav-btn prev-image" id="prev-image">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="image-nav-btn next-image" id="next-image">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="image-thumbnails" id="image-thumbnails">
+                            <!-- Thumbnails will be populated here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-info-section">
+                    <div class="project-categories" id="modal-categories">
+                        <!-- Categories will be populated here -->
+                    </div>
+                    <div class="project-description">
+                        <h3>Description</h3>
+                        <p id="modal-description">Project description will go here...</p>
+                    </div>
+                    <div class="project-technologies">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags" id="modal-tech-tags">
+                            <!-- Tech tags will be populated here -->
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn primary" id="modal-live-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Live
+                        </a>
+                        <a href="#" class="action-btn secondary" id="modal-github-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -389,7 +442,6 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script>
         $(function () {
             $(".text").typed({
@@ -406,49 +458,376 @@
     </script>
     <script>
         $(document).ready(function () {
-    fetch('data/projects.json')
-        .then((response) => response.json())
-        .then((data) => {
-            let gallery = document.querySelector("#gallery");
-            for (const item of data.projects) {
-                let div = document.createElement('div');
-                div.classList.add('col-md-4', 'item', 'my-2');
-                for (let cat of item.category) {
-                    div.classList.add(cat);
+            let projectsData = [];
+            
+            // Helper function to create a shorter description for card hover
+            function createCardDescription(fullDescription) {
+                if (!fullDescription) return 'No description available.';
+                
+                // If description is already short enough, return as is
+                if (fullDescription.length <= 180) {
+                    return fullDescription;
                 }
-                div.innerHTML = `
-                    <div class="project-image">
-                        <img src="${item.img}" alt="${item.Project_name}">
-                        <div class="project-overlay">
-                            <div class="project-text">
-                                ${item.description}
+                
+                // Find the best place to cut the description
+                let cutPoint = 180;
+                let text = fullDescription.substring(0, cutPoint);
+                
+                // Try to cut at the end of a sentence
+                let sentenceEnd = text.lastIndexOf('. ');
+                if (sentenceEnd > 100) {
+                    return text.substring(0, sentenceEnd + 1);
+                }
+                
+                // Try to cut at the end of a complete word
+                let wordEnd = text.lastIndexOf(' ');
+                if (wordEnd > 100) {
+                    return text.substring(0, wordEnd) + '...';
+                }
+                
+                // Fallback to character limit with ellipsis
+                return text + '...';
+            }
+            
+            fetch('data/projects.json')
+                .then((response) => response.json())
+                .then((data) => {
+                    projectsData = data.projects;
+                    let carousel = document.querySelector("#project-carousel");
+                    
+                    data.projects.forEach((item, index) => {
+                        let card = document.createElement('div');
+                        card.classList.add('project-card');
+                        card.setAttribute('data-project-index', index);
+                        card.style.cursor = 'pointer';
+                        
+                        const cardDescription = createCardDescription(item.description || item.desc);
+                        
+                        card.innerHTML = `
+                            <div class="project-image">
+                                <img src="${item.images ? item.images[0] : item.img}" alt="${item.Project_name}">
+                                <div class="project-overlay">
+                                    <div class="project-text">
+                                        <h5 class="project-title">${item.Project_name}</h5>
+                                        <p>${cardDescription}</p>
+                                        <small style="color: #00e7d3; margin-top: 10px; display: block;">Click to view details</small>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                `;
-                gallery.appendChild(div);
+                        `;
+                        
+                        // Add click event to open modal
+                        card.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            openProjectModal(index);
+                        });
+                        carousel.appendChild(card);
+                    });
+                    
+                    // Initialize carousel functionality with a small delay to ensure DOM is rendered
+                    setTimeout(() => {
+                        initProjectCarousel();
+                    }, 100);
+                    
+                    // Initialize modal functionality
+                    initProjectModal();
+                });
+
+            function openProjectModal(projectIndex) {
+                const project = projectsData[projectIndex];
+                const modal = document.getElementById('project-modal');
+                
+                if (!modal) {
+                    return;
+                }
+                
+                // Populate modal content
+                document.getElementById('modal-title').textContent = project.Project_name;
+                document.getElementById('modal-description').innerHTML = (project.description || project.desc || 'No description available.').replace(/\n/g, '<br>');
+                
+                // Handle multiple images
+                const images = project.images || [project.img];
+                let currentImageIndex = 0;
+                
+                // Set main image
+                const mainImage = document.getElementById('modal-main-image');
+                mainImage.src = images[0];
+                mainImage.alt = project.Project_name;
+                
+                // Populate thumbnails
+                const thumbnailsContainer = document.getElementById('image-thumbnails');
+                thumbnailsContainer.innerHTML = '';
+                
+                if (images.length > 1) {
+                    images.forEach((imgSrc, index) => {
+                        const thumbnail = document.createElement('img');
+                        thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
+                        thumbnail.src = imgSrc;
+                        thumbnail.alt = `${project.Project_name} - Image ${index + 1}`;
+                        thumbnail.addEventListener('click', () => {
+                            currentImageIndex = index;
+                            mainImage.src = imgSrc;
+                            // Update active thumbnail
+                            thumbnailsContainer.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+                                thumb.classList.toggle('active', i === index);
+                            });
+                        });
+                        thumbnailsContainer.appendChild(thumbnail);
+                    });
+                }
+                
+                // Image navigation
+                const prevBtn = document.getElementById('prev-image');
+                const nextBtn = document.getElementById('next-image');
+                
+                function updateImageNavigation() {
+                    prevBtn.style.display = images.length > 1 ? 'flex' : 'none';
+                    nextBtn.style.display = images.length > 1 ? 'flex' : 'none';
+                }
+                
+                prevBtn.onclick = () => {
+                    if (images.length > 1) {
+                        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                        mainImage.src = images[currentImageIndex];
+                        thumbnailsContainer.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+                            thumb.classList.toggle('active', i === currentImageIndex);
+                        });
+                    }
+                };
+                
+                nextBtn.onclick = () => {
+                    if (images.length > 1) {
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        mainImage.src = images[currentImageIndex];
+                        thumbnailsContainer.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+                            thumb.classList.toggle('active', i === currentImageIndex);
+                        });
+                    }
+                };
+                
+                updateImageNavigation();
+                
+                // Populate categories
+                const categoriesContainer = document.getElementById('modal-categories');
+                categoriesContainer.innerHTML = '';
+                if (project.category && project.category.length > 0) {
+                    project.category.forEach(cat => {
+                        const catTag = document.createElement('span');
+                        catTag.className = 'category-tag';
+                        catTag.textContent = cat;
+                        categoriesContainer.appendChild(catTag);
+                    });
+                }
+                
+                // Populate tech tags
+                const techContainer = document.getElementById('modal-tech-tags');
+                techContainer.innerHTML = '';
+                if (project.technologies || project.category) {
+                    const techList = project.technologies || project.category;
+                    techList.forEach(tech => {
+                        const techTag = document.createElement('span');
+                        techTag.className = 'tech-tag';
+                        techTag.textContent = tech;
+                        techContainer.appendChild(techTag);
+                    });
+                }
+                
+                // Set up action buttons
+                const liveLink = document.getElementById('modal-live-link');
+                const githubLink = document.getElementById('modal-github-link');
+                
+                liveLink.href = project.liveUrl || '#';
+                githubLink.href = project.githubUrl || '#';
+                
+                if (!project.liveUrl) {
+                    liveLink.style.opacity = '0.5';
+                    liveLink.style.pointerEvents = 'none';
+                }
+                if (!project.githubUrl) {
+                    githubLink.style.opacity = '0.5';
+                    githubLink.style.pointerEvents = 'none';
+                }
+                
+                // Show modal
+                
+                // Force proper layout styles
+                const modalContent = modal.querySelector('.modal-content');
+                const imageSection = modal.querySelector('.modal-image-section');
+                const infoSection = modal.querySelector('.modal-info-section');
+                
+                // Better mobile detection - consider both width and device type
+                const isMobile = window.innerWidth <= 767 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                
+                if (!isMobile && window.innerWidth > 767) {
+                    // Desktop/Laptop layout
+                    modalContent.style.flexDirection = 'row';
+                    imageSection.style.flex = '0 0 50%';
+                    imageSection.style.width = '50%';
+                    infoSection.style.flex = '0 0 50%';
+                    infoSection.style.width = '50%';
+                } else {
+                    // Mobile/Tablet layout
+                    modalContent.style.flexDirection = 'column';
+                    imageSection.style.flex = '0 0 40%';
+                    imageSection.style.width = '100%';
+                    infoSection.style.flex = '1';
+                    infoSection.style.width = '100%';
+                }
+                
+                // Show modal immediately
+                modal.style.display = 'flex';
+                modal.style.visibility = 'visible';
+                
+                // Force a reflow to ensure display is applied
+                modal.offsetHeight;
+                
+                // Then add the active class for opacity transition
+                modal.classList.add('active');
+                modal.style.opacity = '1';
+                
+                document.body.style.overflow = 'hidden';
+                
+                // Add a small delay to ensure the modal is fully rendered before allowing interactions
+                setTimeout(() => {
+                }, 300);
             }
 
-            // Initialize Isotope after the content is loaded
-            var $gallery = $('#gallery').isotope({
-                itemSelector: '.item',
-                layoutMode: 'fitRows',
-            });
-
-            // Force Isotope to recalculate the layout
-            $gallery.isotope('reloadItems'); // Reload the items
-            $gallery.isotope('layout'); // Recalculate the layout
-
-            // Filter buttons event handler
-            $('.btn').on('click', function () {
-                $('.btn').removeClass('active'); // Remove 'active' class from all buttons
-                $(this).addClass('active'); // Add 'active' class to the clicked button
-
-                var filterValue = $(this).attr('data-filter');
-                $gallery.isotope({ filter: filterValue });
-            });
+            function initProjectModal() {
+                const modal = document.getElementById('project-modal');
+                const closeBtn = document.getElementById('modal-close');
+                const modalContainer = modal.querySelector('.modal-container');
+                
+                if (!modal || !closeBtn || !modalContainer) {
+                    return;
+                }
+                
+                // Close modal events
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeModal();
+                });
+                
+                // Only close if clicking directly on the modal background (not the container)
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+                
+                // Prevent modal container and its contents from closing the modal
+                modalContainer.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+                
+                // Close on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) {
+                        closeModal();
+                    }
+                });
+                
+                function closeModal() {
+                    modal.classList.remove('active');
+                    
+                    // Reset inline styles
+                    modal.style.opacity = '';
+                    modal.style.visibility = '';
+                    modal.style.display = '';
+                    
+                    document.body.style.overflow = 'auto';
+                }
+                
+                // Image navigation (for future multiple images feature)
+                const prevImageBtn = document.getElementById('prev-image');
+                const nextImageBtn = document.getElementById('next-image');
+                
+                prevImageBtn.addEventListener('click', () => {
+                    // Placeholder for previous image functionality
+                });
+                
+                nextImageBtn.addEventListener('click', () => {
+                    // Placeholder for next image functionality
+                });
+            }
         });
-});
+
+        function initProjectCarousel() {
+            const carousel = document.getElementById('project-carousel');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let currentIndex = 0;
+            let autoScrollInterval;
+
+            // Guard: no cards
+            const firstCard = carousel.children[0];
+            if (!firstCard) return;
+
+            // Simple measurements
+            const cardWidth = firstCard.offsetWidth;
+            const gapSize = parseInt(getComputedStyle(carousel).gap) || 20;
+            const step = cardWidth + gapSize;
+
+            const wrapper = carousel.parentElement;
+            const containerWidth = wrapper.clientWidth;
+            const totalCards = carousel.children.length;
+            const visibleCards = Math.floor(containerWidth / step);
+            
+            // Simple max index calculation
+            const maxIndex = Math.max(0, totalCards - visibleCards);
+
+            function updateCarousel() {
+                const translateX = currentIndex * step;
+                carousel.style.transform = `translateX(-${translateX}px)`;
+                
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex;
+                
+                // Hide buttons if no scrolling needed
+                if (maxIndex === 0) {
+                    prevBtn.style.display = 'none';
+                    nextBtn.style.display = 'none';
+                } else {
+                    prevBtn.style.display = 'flex';
+                    nextBtn.style.display = 'flex';
+                }
+            }
+
+            function nextSlide() {
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Reset to beginning
+                }
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = maxIndex; // Jump to end
+                }
+                updateCarousel();
+            }
+
+            function startAutoScroll() {
+                if (maxIndex > 0) {
+                    autoScrollInterval = setInterval(nextSlide, 3000);
+                }
+            }
+            function stopAutoScroll() {
+                clearInterval(autoScrollInterval);
+            }
+
+            nextBtn.addEventListener('click', () => { stopAutoScroll(); nextSlide(); startAutoScroll(); });
+            prevBtn.addEventListener('click', () => { stopAutoScroll(); prevSlide(); startAutoScroll(); });
+            carousel.addEventListener('mouseenter', stopAutoScroll);
+            carousel.addEventListener('mouseleave', startAutoScroll);
+
+            updateCarousel();
+            startAutoScroll();
+        }
     </script>
 
 </body>
