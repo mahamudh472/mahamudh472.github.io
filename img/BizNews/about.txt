@@ -1,0 +1,32 @@
+BizNews
+Description:
+BizNews is a dynamic news publishing web application built on top of the popular free BizNews Bootstrap template, known for its modern and attractive UI. This project extends the template by integrating a fully functional backend using Django, transforming the static design into a feature-rich, content-driven platform.
+
+The platform allows authenticated users to publish blogs, interact through comments, and explore content through search, categories, and detailed blog views. Rich text editing is enabled using CKEditor5, ensuring that blog content is visually engaging and easy to format.
+
+Key Features:
+
+Blog System: Full CRUD functionality for blogs, with CKEditor5 support for rich text content.
+
+User Authentication: Secure login, signup, and logout system for writers and readers.
+
+Search Functionality: Keyword-based search to quickly find relevant news articles.
+
+Categories & Filtering: Blog posts are grouped into categories with single-category views showing relevant content.
+
+View Counter: Tracks and displays the number of views per blog post with timestamp support.
+
+Comment System: Readers can post comments under blog articles to engage in discussions.
+
+Responsive Design: Fully responsive UI using the BizNews Bootstrap template for seamless viewing across devices.
+
+Technologies Used:
+
+Frontend: HTML, CSS, Bootstrap (BizNews Template), CKEditor5
+
+Backend: Python, Django
+
+Database: SQLite3 (easily replaceable with PostgreSQL or others for production)
+
+Other Tools: Django Admin for backend management, custom middleware for view tracking
+

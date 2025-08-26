@@ -1,0 +1,18 @@
+DICOM Viewer
+Description:
+The DICOM Viewer project was developed as a client solution for displaying and interacting with DICOM (.dcm) files. This web application allows users to upload a DICOM file and view the medical images and associated metadata contained within it. The viewer handles three-dimensional data, displaying multiple image slices along with detailed patient and medical center information.
+
+The interface is divided into two main sections:
+
+Image Viewer (Left Panel): Displays the medical images from the DICOM file, with navigation controls to switch between slices. The viewer also features a mega zoom functionality, allowing users to hover over images and examine details more closely. AJAX is utilized for smooth, uninterrupted operations.
+Metadata Display (Right Panel): Presents the metadata from the DICOM file, such as patient details and medical center information.
+Key Features:
+
+DICOM File Upload and Viewing: Users can upload a DICOM file and view all the images and metadata contained within it.
+Slice Navigation: Navigate through all image slices with previous and next buttons.
+Mega Zoom: Hover over images to zoom in and view fine details.
+Django Admin Template: Leveraged the Django admin template to create a clean, functional navigation and basic design elements.
+Technologies Used:
+
+Frontend: Bootstrap, Django Admin Template
+Backend: Python, Django, Matplotlib, SQLite3

@@ -1,0 +1,12 @@
+SharBus is a web application designed to provide bus transportation information in Sharjah and the UAE. It allows users to explore bus routes, stops, schedules, and fares with an interactive and user-friendly interface.
+
+Features
+Route Selection: Users can select two locations, and the map displays the route between them.
+Comprehensive Bus Stops: Shows all bus stops and pickup points in the UAE on the map.
+Bus Schedules: Displays bus timings, bus numbers, fares, and destinations.
+Lightweight Design: Does not include bookings, logins, or real-time updates for simplicity.
+Tech Stack
+Backend: Django
+Frontend: Bootstrap
+Database: SQLite3 (for development)
+Map Services: Integrated with public map APIs

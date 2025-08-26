@@ -1,0 +1,16 @@
+ITCertification
+Description:
+The ITCertification project was developed for a client to provide a platform where users can purchase and take certification exams offered by various vendors or companies. Once a user successfully completes the payment, they gain access to the exam questions.
+
+Key Features:
+
+Cart Functionality: Users can add or remove exams from the cart. If a user is not logged in, they can still add items to the cart, and when they log in or sign up, the cart items are automatically associated with their account.
+User Profile Management: The profile page allows users to view their personal information and purchased exams. Users can update their information, avatar, or password through a modal popup that appears when the "Edit Profile" button is clicked.
+Exam Interface: The exam questions page includes user-friendly features such as selecting the number of questions per page (10 or 20), navigating between questions using next and previous buttons, and an "Expose Correct Answer" option. The platform supports multiple question types, including multiple-choice questions (MCQs), image-based questions, and fill-in-the-blank questions.
+Admin Panel Customization: The Django admin panel is customized for a better experience when managing database tables.
+Search and Suggestion: The application includes a search box with a dynamic suggestion system to help users find exams quickly.
+Payment Integration: Stripe is integrated for secure payment processing when purchasing exams.
+Technologies Used:
+
+Frontend: HTML, CSS, jQuery, Bootstrap
+Backend: Python, Django, Stripe, SQLite3

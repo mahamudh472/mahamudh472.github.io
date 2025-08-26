@@ -11,11 +11,87 @@
                 "img/diabetes-predictor/profile.png",
                 "img/diabetes-predictor/documents.png"
             ],
-            "description": "GlucoGuide – Diabetes Prediction and Health Monitoring System\n\nKey Features:\nSecure Authentication with 2FA: User registration and login are protected with two-factor authentication via Gmail OTP for enhanced security.\n\nPersonalized Health Profile: Users input key physical and medical metrics during onboarding (e.g., age, glucose level, blood pressure, BMI), which can be updated anytime from the profile page.\n\nInteractive Daily Tracker: A dynamic calendar interface allows users to submit daily health data. Dates with entries are marked in blue, and selected dates are highlighted in yellow, displaying stored values for easy review and updates.\n\nDiabetes Prediction Engine: Upon daily data submission, a trained machine learning model (built with scikit-learn) predicts diabetes risk and returns a result with percentage likelihood.\n\nDietary Suggestions: Based on health metrics and prediction results, the system provides smart, personalized dietary recommendations to guide users toward healthier choices.\n\nVisual Dashboard: Users can track trends in their health data over time through interactive charts and analytics.\n\nDocument Management: A document center allows users to securely upload, view, download, share, and delete medical documents or reports.",
+            "description": "GlucoGuide - Diabetes Prediction and Health Monitoring System\n\nKey Features:\nSecure Authentication with 2FA: User registration and login are protected with two-factor authentication via Gmail OTP for enhanced security.\n\nPersonalized Health Profile: Users input key physical and medical metrics during onboarding (e.g., age, glucose level, blood pressure, BMI), which can be updated anytime from the profile page.\n\nInteractive Daily Tracker: A dynamic calendar interface allows users to submit daily health data. Dates with entries are marked in blue, and selected dates are highlighted in yellow, displaying stored values for easy review and updates.\n\nDiabetes Prediction Engine: Upon daily data submission, a trained machine learning model (built with scikit-learn) predicts diabetes risk and returns a result with percentage likelihood.\n\nDietary Suggestions: Based on health metrics and prediction results, the system provides smart, personalized dietary recommendations to guide users toward healthier choices.\n\nVisual Dashboard: Users can track trends in their health data over time through interactive charts and analytics.\n\nDocument Management: A document center allows users to securely upload, view, download, share, and delete medical documents or reports.",
             "category": ["python", "django", "web", "backend"],
             "technologies": ["Python", "Django", "Pandas", "Scikit-learn", "HTML/CSS", "JavaScript", "SQLite", "Bootstrap"],
-            "liveUrl": "#",
-            "githubUrl": "#"
+            "liveUrl": "https://glucoguide.onrender.com/",
+            "githubUrl": "https://github.com/mahamudh472/dibetes-predictor"
+        },
+        {
+            "Project_name": "BizNews",
+            "images": [
+                "img/BizNews/Home.PNG",
+                "img/BizNews/news.PNG",
+                "img/BizNews/category.PNG",
+                "img/BizNews/search result.PNG"                
+            ],
+            "description": "BizNews is a dynamic news publishing web application built on top of the popular free BizNews Bootstrap template, known for its modern and attractive UI. This project extends the template by integrating a fully functional backend using Django, transforming the static design into a feature-rich, content-driven platform.\n\nThe platform allows authenticated users to publish blogs, interact through comments, and explore content through search, categories, and detailed blog views. Rich text editing is enabled using CKEditor5, ensuring that blog content is visually engaging and easy to format.\n\nKey Features:\n\nBlog System: Full CRUD functionality for blogs, with CKEditor5 support for rich text content.\n\nUser Authentication: Secure login, signup, and logout system for writers and readers.\n\nSearch Functionality: Keyword-based search to quickly find relevant news articles.\n\nCategories & Filtering: Blog posts are grouped into categories with single-category views showing relevant content.\n\nView Counter: Tracks and displays the number of views per blog post with timestamp support.\n\nComment System: Readers can post comments under blog articles to engage in discussions.\n\nResponsive Design: Fully responsive UI using the BizNews Bootstrap template for seamless viewing across devices.\n",
+            "category": ["python", "django", "web", "backend"],
+            "technologies": ["Python", "Django", "HTML/CSS", "CKEditor5", "JavaScript", "SQLite", "Bootstrap"],
+            "liveUrl": "",
+            "githubUrl": "https://github.com/mahamudh472/BizNews-blog-project"
+        },
+        {
+            "Project_name": "DICOM Viewer",
+            "images": [
+                "img/Dicom_viewer/Home.PNG",
+                "img/Dicom_viewer/viewer.PNG"           
+            ],
+            "description": "The DICOM Viewer project was developed as a client solution for displaying and interacting with DICOM (.dcm) files. This web application allows users to upload a DICOM file and view the medical images and associated metadata contained within it. The viewer handles three-dimensional data, displaying multiple image slices along with detailed patient and medical center information.\n\nThe interface is divided into two main sections:\n\nImage Viewer (Left Panel): Displays the medical images from the DICOM file, with navigation controls to switch between slices. The viewer also features a mega zoom functionality, allowing users to hover over images and examine details more closely. AJAX is utilized for smooth, uninterrupted operations.\nMetadata Display (Right Panel): Presents the metadata from the DICOM file, such as patient details and medical center information.\nKey Features:\n\nDICOM File Upload and Viewing: Users can upload a DICOM file and view all the images and metadata contained within it.\nSlice Navigation: Navigate through all image slices with previous and next buttons.\nMega Zoom: Hover over images to zoom in and view fine details.\nDjango Admin Template: Leveraged the Django admin template to create a clean, functional navigation and basic design elements.\n",
+
+            "category": ["python", "django", "web", "backend"],
+            "technologies": ["Python", "Django", "HTML/CSS", "matplotlib", "SQLite", "Bootstrap"],
+            "liveUrl": "",
+            "githubUrl": "https://github.com/mahamudh472/Dicom_viewer"
+        },
+        {
+            "Project_name": "ITCertification",
+            "images": [
+                "img/ITCertification/home.PNG",
+                "img/ITCertification/exam list.PNG",
+                "img/ITCertification/Cart.PNG",
+                "img/ITCertification/profile.PNG",
+                "img/ITCertification/question details.PNG"     
+
+            ],
+            "description": "The ITCertification project was developed for a client to provide a platform where users can purchase and take certification exams offered by various vendors or companies. Once a user successfully completes the payment, they gain access to the exam questions.\n\nKey Features:\n\nCart Functionality: Users can add or remove exams from the cart. If a user is not logged in, they can still add items to the cart, and when they log in or sign up, the cart items are automatically associated with their account.\nUser Profile Management: The profile page allows users to view their personal information and purchased exams. Users can update their information, avatar, or password through a modal popup that appears when the \"Edit Profile\" button is clicked.\nExam Interface: The exam questions page includes user-friendly features such as selecting the number of questions per page (10 or 20), navigating between questions using next and previous buttons, and an \"Expose Correct Answer\" option. The platform supports multiple question types, including multiple-choice questions (MCQs), image-based questions, and fill-in-the-blank questions.\nAdmin Panel Customization: The Django admin panel is customized for a better experience when managing database tables.\nSearch and Suggestion: The application includes a search box with a dynamic suggestion system to help users find exams quickly.\nPayment Integration: Stripe is integrated for secure payment processing when purchasing exams.\n",
+            "category": ["python", "django", "web", "backend"],
+            "technologies": ["Python", "Django", "HTML/CSS", "stripe", "jquery", "SQLite", "Bootstrap"],
+            "liveUrl": "",
+            "githubUrl": ""
+        },
+        {
+            "Project_name": "Medical Test",
+            "images": [
+                "img/medical_test/Home-d.PNG",
+                "img/medical_test/Home (2).png",
+                "img/medical_test/placeorder.png"
+             
+
+            ],
+            "description": "The Medical Test project was developed for a client in Tanzania, aimed at simplifying the process of booking medical tests online. This web application allows users to browse a wide range of medical services provided by various service centers. Users can choose to book services either by visiting the center or opting for home services at an additional cost. The platform integrates Stripe for secure online payments, ensuring that bookings are confirmed instantly upon successful payment.\n\nKey Features:\n\nMulti-Item Cart: Users can add one or multiple tests to their cart, making it easy to manage multiple bookings in a single transaction.\nFavorites List: Users have the option to save their preferred tests to a favorites list for easy access in the future.\nAdvanced Search: The application provides robust search functionality, allowing users to find specific services or service centers.\nProximity Filtering: Users can view service centers within a 10km radius of their location.\nDynamic Place Order Form: The place order form is highly interactive. Users booking home services can select their address, and the system dynamically calculates the delivery fee based on distance. The cart is updated in real-time to reflect subtotal, delivery fee, discount, tax, and total cost.\nVoucher Redemption: Integrated with Snippets API, users can apply vouchers during checkout. Successfully redeemed vouchers provide bonuses, which are instantly reflected in the order summary via AJAX.\nAdditional Features:\nThe application includes several small but impactful features to enhance user experience, such as Google Maps suggestions in search boxes. The place order page is equipped with features like dynamic delivery fee calculation and voucher application, all handled silently through AJAX for a seamless user experience.\n",
+            "category": ["python", "django", "web", "backend"],
+            "technologies": [
+                "Python", "Django", "SQLite", "Stripe", "Snippets API", "Google Maps API",
+                "HTML", "CSS", "Bootstrap", "jQuery", "AJAX"
+            ],
+            "liveUrl": "",
+            "githubUrl": ""
+        },
+        {
+            "Project_name": "SHARJAH MAWSALAT",
+            "images": [
+                "img/SHARJAH_MAWSALAT/home.PNG",
+                "img/SHARJAH_MAWSALAT/bus schadule.PNG",
+                "img/SHARJAH_MAWSALAT/find route.PNG",
+                "img/SHARJAH_MAWSALAT/route map view.PNG",
+                "img/SHARJAH_MAWSALAT/route list view.PNG"
+            ],
+            "description": "SharBus is a web application designed to provide bus transportation information in Sharjah and the UAE. It allows users to explore bus routes, stops, schedules, and fares with an interactive and user-friendly interface.\n\nFeatures\nRoute Selection: Users can select two locations, and the map displays the route between them.\nComprehensive Bus Stops: Shows all bus stops and pickup points in the UAE on the map.\nBus Schedules: Displays bus timings, bus numbers, fares, and destinations.\nLightweight Design: Does not include bookings, logins, or real-time updates for simplicity.\n",
+            "category": ["python", "django", "web", "backend"],
+            "technologies": ["Python", "Django", "JavaScript", "SQLite", "Bootstrap", "OpenStreetMap"],
+            "liveUrl": "https://sharjah-mowasalat.onrender.com/",
+            "githubUrl": ""
         },
         {
             "Project_name": "EduHub",

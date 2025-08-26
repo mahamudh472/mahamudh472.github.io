@@ -1,0 +1,18 @@
+Medical Test Web Application
+Description:
+The Medical Test project was developed for a client in Tanzania, aimed at simplifying the process of booking medical tests online. This web application allows users to browse a wide range of medical services provided by various service centers. Users can choose to book services either by visiting the center or opting for home services at an additional cost. The platform integrates Stripe for secure online payments, ensuring that bookings are confirmed instantly upon successful payment.
+
+Key Features:
+
+Multi-Item Cart: Users can add one or multiple tests to their cart, making it easy to manage multiple bookings in a single transaction.
+Favorites List: Users have the option to save their preferred tests to a favorites list for easy access in the future.
+Advanced Search: The application provides robust search functionality, allowing users to find specific services or service centers.
+Proximity Filtering: Users can view service centers within a 10km radius of their location.
+Dynamic Place Order Form: The place order form is highly interactive. Users booking home services can select their address, and the system dynamically calculates the delivery fee based on distance. The cart is updated in real-time to reflect subtotal, delivery fee, discount, tax, and total cost.
+Voucher Redemption: Integrated with Snippets API, users can apply vouchers during checkout. Successfully redeemed vouchers provide bonuses, which are instantly reflected in the order summary via AJAX.
+Technologies Used:
+
+Frontend: HTML, CSS, Bootstrap, jQuery, AJAX, Google Maps API
+Backend: Python, Django, Google Maps, Snippets API, Stripe, SQLite3
+Additional Features:
+The application includes several small but impactful features to enhance user experience, such as Google Maps suggestions in search boxes. The place order page is equipped with features like dynamic delivery fee calculation and voucher application, all handled silently through AJAX for a seamless user experience.
