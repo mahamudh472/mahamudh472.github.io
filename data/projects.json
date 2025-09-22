@@ -18,6 +18,40 @@
             "githubUrl": "https://github.com/mahamudh472/dibetes-predictor"
         },
         {
+            "Project_name": "Medical Test",
+            "images": [
+                "img/medical_test/Home-d.PNG",
+                "img/medical_test/Home (2).png",
+                "img/medical_test/placeorder.png"
+             
+
+            ],
+            "description": "The Medical Test project was developed for a client in Tanzania, aimed at simplifying the process of booking medical tests online. This web application allows users to browse a wide range of medical services provided by various service centers. Users can choose to book services either by visiting the center or opting for home services at an additional cost. The platform integrates Stripe for secure online payments, ensuring that bookings are confirmed instantly upon successful payment.\n\nKey Features:\n\nMulti-Item Cart: Users can add one or multiple tests to their cart, making it easy to manage multiple bookings in a single transaction.\nFavorites List: Users have the option to save their preferred tests to a favorites list for easy access in the future.\nAdvanced Search: The application provides robust search functionality, allowing users to find specific services or service centers.\nProximity Filtering: Users can view service centers within a 10km radius of their location.\nDynamic Place Order Form: The place order form is highly interactive. Users booking home services can select their address, and the system dynamically calculates the delivery fee based on distance. The cart is updated in real-time to reflect subtotal, delivery fee, discount, tax, and total cost.\nVoucher Redemption: Integrated with Snippets API, users can apply vouchers during checkout. Successfully redeemed vouchers provide bonuses, which are instantly reflected in the order summary via AJAX.\nAdditional Features:\nThe application includes several small but impactful features to enhance user experience, such as Google Maps suggestions in search boxes. The place order page is equipped with features like dynamic delivery fee calculation and voucher application, all handled silently through AJAX for a seamless user experience.\n",
+            "category": ["python", "django", "web", "backend"],
+            "technologies": [
+                "Python", "Django", "SQLite", "Stripe", "Snippets API", "Google Maps API",
+                "HTML", "CSS", "Bootstrap", "jQuery", "AJAX"
+            ],
+            "liveUrl": "https://medical-test-vja4.onrender.com/",
+            "githubUrl": "https://github.com/mahamudh472/medical_test"
+        },
+
+        {
+            "Project_name": "SHARJAH MAWSALAT",
+            "images": [
+                "img/SHARJAH_MAWSALAT/home.PNG",
+                "img/SHARJAH_MAWSALAT/bus schadule.PNG",
+                "img/SHARJAH_MAWSALAT/find route.PNG",
+                "img/SHARJAH_MAWSALAT/route map view.PNG",
+                "img/SHARJAH_MAWSALAT/route list view.PNG"
+            ],
+            "description": "SharBus is a web application designed to provide bus transportation information in Sharjah and the UAE. It allows users to explore bus routes, stops, schedules, and fares with an interactive and user-friendly interface.\n\nFeatures\nRoute Selection: Users can select two locations, and the map displays the route between them.\nComprehensive Bus Stops: Shows all bus stops and pickup points in the UAE on the map.\nBus Schedules: Displays bus timings, bus numbers, fares, and destinations.\nLightweight Design: Does not include bookings, logins, or real-time updates for simplicity.\n",
+            "category": ["python", "django", "web", "backend"],
+            "technologies": ["Python", "Django", "JavaScript", "SQLite", "Bootstrap", "OpenStreetMap"],
+            "liveUrl": "https://sharjah-mowasalat.onrender.com/",
+            "githubUrl": "https://github.com/mahamudh472/SharBus"
+        },
+        {
             "Project_name": "BizNews",
             "images": [
                 "img/BizNews/Home.PNG",
@@ -52,45 +86,11 @@
                 "img/ITCertification/Cart.PNG",
                 "img/ITCertification/profile.PNG",
                 "img/ITCertification/question details.PNG"     
-
             ],
             "description": "The ITCertification project was developed for a client to provide a platform where users can purchase and take certification exams offered by various vendors or companies. Once a user successfully completes the payment, they gain access to the exam questions.\n\nKey Features:\n\nCart Functionality: Users can add or remove exams from the cart. If a user is not logged in, they can still add items to the cart, and when they log in or sign up, the cart items are automatically associated with their account.\nUser Profile Management: The profile page allows users to view their personal information and purchased exams. Users can update their information, avatar, or password through a modal popup that appears when the \"Edit Profile\" button is clicked.\nExam Interface: The exam questions page includes user-friendly features such as selecting the number of questions per page (10 or 20), navigating between questions using next and previous buttons, and an \"Expose Correct Answer\" option. The platform supports multiple question types, including multiple-choice questions (MCQs), image-based questions, and fill-in-the-blank questions.\nAdmin Panel Customization: The Django admin panel is customized for a better experience when managing database tables.\nSearch and Suggestion: The application includes a search box with a dynamic suggestion system to help users find exams quickly.\nPayment Integration: Stripe is integrated for secure payment processing when purchasing exams.\n",
             "category": ["python", "django", "web", "backend"],
             "technologies": ["Python", "Django", "HTML/CSS", "stripe", "jquery", "SQLite", "Bootstrap"],
             "liveUrl": "",
-            "githubUrl": ""
-        },
-        {
-            "Project_name": "Medical Test",
-            "images": [
-                "img/medical_test/Home-d.PNG",
-                "img/medical_test/Home (2).png",
-                "img/medical_test/placeorder.png"
-             
-
-            ],
-            "description": "The Medical Test project was developed for a client in Tanzania, aimed at simplifying the process of booking medical tests online. This web application allows users to browse a wide range of medical services provided by various service centers. Users can choose to book services either by visiting the center or opting for home services at an additional cost. The platform integrates Stripe for secure online payments, ensuring that bookings are confirmed instantly upon successful payment.\n\nKey Features:\n\nMulti-Item Cart: Users can add one or multiple tests to their cart, making it easy to manage multiple bookings in a single transaction.\nFavorites List: Users have the option to save their preferred tests to a favorites list for easy access in the future.\nAdvanced Search: The application provides robust search functionality, allowing users to find specific services or service centers.\nProximity Filtering: Users can view service centers within a 10km radius of their location.\nDynamic Place Order Form: The place order form is highly interactive. Users booking home services can select their address, and the system dynamically calculates the delivery fee based on distance. The cart is updated in real-time to reflect subtotal, delivery fee, discount, tax, and total cost.\nVoucher Redemption: Integrated with Snippets API, users can apply vouchers during checkout. Successfully redeemed vouchers provide bonuses, which are instantly reflected in the order summary via AJAX.\nAdditional Features:\nThe application includes several small but impactful features to enhance user experience, such as Google Maps suggestions in search boxes. The place order page is equipped with features like dynamic delivery fee calculation and voucher application, all handled silently through AJAX for a seamless user experience.\n",
-            "category": ["python", "django", "web", "backend"],
-            "technologies": [
-                "Python", "Django", "SQLite", "Stripe", "Snippets API", "Google Maps API",
-                "HTML", "CSS", "Bootstrap", "jQuery", "AJAX"
-            ],
-            "liveUrl": "",
-            "githubUrl": ""
-        },
-        {
-            "Project_name": "SHARJAH MAWSALAT",
-            "images": [
-                "img/SHARJAH_MAWSALAT/home.PNG",
-                "img/SHARJAH_MAWSALAT/bus schadule.PNG",
-                "img/SHARJAH_MAWSALAT/find route.PNG",
-                "img/SHARJAH_MAWSALAT/route map view.PNG",
-                "img/SHARJAH_MAWSALAT/route list view.PNG"
-            ],
-            "description": "SharBus is a web application designed to provide bus transportation information in Sharjah and the UAE. It allows users to explore bus routes, stops, schedules, and fares with an interactive and user-friendly interface.\n\nFeatures\nRoute Selection: Users can select two locations, and the map displays the route between them.\nComprehensive Bus Stops: Shows all bus stops and pickup points in the UAE on the map.\nBus Schedules: Displays bus timings, bus numbers, fares, and destinations.\nLightweight Design: Does not include bookings, logins, or real-time updates for simplicity.\n",
-            "category": ["python", "django", "web", "backend"],
-            "technologies": ["Python", "Django", "JavaScript", "SQLite", "Bootstrap", "OpenStreetMap"],
-            "liveUrl": "https://sharjah-mowasalat.onrender.com/",
             "githubUrl": ""
         },
         {
